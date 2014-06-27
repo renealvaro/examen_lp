@@ -1,0 +1,13 @@
+{% extends "bases.html" %}
+{% block contenido %}
+{% if latest_poll_list %}
+    <ul>
+    {% for poll in latest_poll_list %}
+       <li><a href="/polls/{{ poll.id }}/" type = "button" class="btn btn-success">{{ poll.question }}</a></li>
+
+       {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+    {% endif %} 
+{% endblock %}
